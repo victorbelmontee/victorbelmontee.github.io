@@ -27,11 +27,11 @@
 
 - **Suscripción (Checkbox)**
   - **Tipo:** `checkbox`
-  - **Descripción:** Campo de selección que nos permite checkear una caja.
+  - **Descripción:** Campo de selección que nos permite checkear una caja o dejarla descheckeada.
   - **Imagen de ejemplo:**
  
 
-  ![Imagen de Chekbox](https://www.a11ywithlindsey.com/static/9e42a8bdd05057fd3901bc435050a03c/eea79/teal-checkboxes-design.png)
+  ![Imagen de Checkbox](https://www.a11ywithlindsey.com/static/9e42a8bdd05057fd3901bc435050a03c/eea79/teal-checkboxes-design.png)
 
 
 ---
