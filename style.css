@@ -1,0 +1,41 @@
+h1{
+color: #2596be;
+font-size: 76px;
+font-family: sans-serif;
+border-bottom: 6px dashed #ff00ff;
+background-color: pink;
+}
+h2{
+color: blue;
+}
+strong {
+border-bottom: 1px dashed #2596be;
+}
+a{
+color: red;	
+text-decoration: underline blue;
+}
+a:visited{
+color: green;
+}
+a:hover{
+background-color: yellow;
+text-decoration: underline dotted red;
+}
+h1{
+text-align: right;
+background-color: red;
+margin: 32px 32px 32px 32px;
+padding: 32px 32px 32px 32px;
+}
+p{
+text-align: justify;
+}
+footer{
+display: flex;
+flex-direction: row-reverse;
+justify-content:space-between;
+align-items:center;
+padding: 16px 32px 16px 32px;
+background-color: red;
+}
