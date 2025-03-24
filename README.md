@@ -29,6 +29,8 @@
   - **Tipo:** `checkbox`
   - **Descripción:** Campo de selección que nos permite checkear una caja.
   - **Imagen de ejemplo:**
+ 
+
   ![Imagen de Chekbox](https://www.a11ywithlindsey.com/static/9e42a8bdd05057fd3901bc435050a03c/eea79/teal-checkboxes-design.png)
 
 
