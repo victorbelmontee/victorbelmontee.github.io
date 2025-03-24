@@ -23,11 +23,14 @@
 
 - **Edad**
   - **Tipo:** `number`
-  - **Descripción:** Permite ingresar la edad del usuario. Se ha configurado con un valor por defecto de **18** y establece límites con `min="1"` y `max="120"`.
+  - **Descripción:** Permite ingresar la edad del usuario. Se puede configurar con un valor por defecto, por ejemplo de **18** y establecer límites con `min="1"` y `max="120"`.
 
 - **Suscripción (Checkbox)**
   - **Tipo:** `checkbox`
-  - **Descripción:** Campo de selección que, de acuerdo a la broma del ejercicio, implica que si el usuario no lo marca, se suscribe automáticamente a un mailing y acepta donar 1000€.
+  - **Descripción:** Campo de selección que nos permite checkear una caja.
+  - **Imagen de ejemplo:**
+  ![Imagen de Chekbox](https://www.a11ywithlindsey.com/static/9e42a8bdd05057fd3901bc435050a03c/eea79/teal-checkboxes-design.png)
+
 
 ---
 
