@@ -2,11 +2,80 @@
 <html>
 	<head>
 		<title>Victor Belmonte - Microjuego</title>
+		<script>
+		
+		let num_min = 1;
+		let num_max = 100;
+		
+		let numero = Math.floor(Math.random()*num_max)+num_min; 
+
+		let contador = 0;
+		
+		function reset_numero ()
+		{
+			let my_num_input = document.getElementById("my-number")
+			
+			my_num_input.value = "";
+			
+			my_num_input.focus();
+		
+		}
+		
+		function muestra_error (msg) 
+		{
+			alert(msg);
+			return;
+		
+		}
+
+		function compara_numero ()
+		{
+		
+			let my_num_input = document.getElementById("my-number")
+	
+			let my_num = my_num_input.value;
+	
+			if (isNaN(my_num) || my_num == "") {
+				let msg = "¡No has introducido un valor correcto. El valor debe ser un número entre el " + num_min + " y el " + num_max;
+				muestra_error(msg);
+				return;
+			} else if (my_num < num_min || my_num > num_max) {
+				let msg = "¡El valor debe estar entre el " + num_min + " y el " + num_max;
+				muestra_error(msg);
+				return;
+			}
+			
+			
+			contador++;
+			let submit_input = document.getElementById("button")
+			submit_input.value = "Adivina! ("+contador+")";
+
+			let resultado = document.getElementById("resultado");
+
+			if (my_num > numero) {
+				resultado.innerHTML = "<em class=\"error\">El número a adivinar es mas <strong>pequeño</strong> que "+my_num+"</em>";
+				resultado.style.color = "red";
+			}
+			else if (my_num < numero){
+				resultado.innerHTML = "<em class=\"error\">El número a adivinar es mas <strong>grande</strong>  que "+my_num+"</em>";
+				resultado.style.color = "red";
+
+			}
+			else {
+				resultado.innerHTML = "<marquee><strong>Lo has acertado</strong></marquee>";
+				resultado.style.color = "green";
+			}
+			
+			my_num_input.value = "";
+
+			my_num_input.focus();
+		}
+		</script>
 	</head>
 	<body>
 		<header>
 			<h1>Microjuego</h1>
-			<nav>
+			<nav class="web-navigation">
 				<ul>
 					<li><a href="index.html">Home</a></li>
 					<li><a href="cv.html">CV</a></li>
@@ -19,13 +88,25 @@
 	
 		<main>	
 		<form>
-			<p>Tu número: <input type="number" name="Tu Número"/><label for="Tu número"></p>		
-			<p><input type="submit"/></p>
+		<h2>Adivina el número</h2>
+		<p>Adivina el número que he generado. Es un número entre el <strong>1</strong> y el <strong>100</strong></p>
+		<p id="resultado">Prueba suerte</p>
+			<p>Tu número: <input type="number" id="my-number"name="Tu Número"/><label for="Tu número"></p>		
+			<p><input type="button" id="button" value="Adivina!" onClick="compara_numero();"/></p>
 		</form>
 		</main>
 		
 		<footer>
 		<p>Victor Belmonte &copy; 2025</p>
+		<nav class="web-navigation">
+				<ul>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="cv.html">CV</a></li>
+					<li><a href="hobbies.html">Hobbies</a></li>
+					<li><a href="contact.html">Contact</a></li>
+					<li><a href="microjuego.html">Microjuego</a></li>
+				</ul>
+			</nav>
 		</footer>
 	</body>
 </html>
