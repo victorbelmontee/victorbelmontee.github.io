@@ -2,6 +2,8 @@
 <html>
 	<head>
 		<title>Victor Belmonte - Microjuego</title>
+		<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="style.css" />
 		<script>
 		
 		let num_min = 1;
@@ -34,7 +36,7 @@
 			let my_num_input = document.getElementById("my-number")
 	
 			let my_num = my_num_input.value;
-	
+			my_num_input.style.border = "";
 			if (isNaN(my_num) || my_num == "") {
 				let msg = "¡No has introducido un valor correcto. El valor debe ser un número entre el " + num_min + " y el " + num_max;
 				muestra_error(msg);
@@ -49,16 +51,24 @@
 			contador++;
 			let submit_input = document.getElementById("button")
 			submit_input.value = "Adivina! ("+contador+")";
+			
+			if (contador >= 10) {
+			submit_input.disabled = true;
+			}
+
 
 			let resultado = document.getElementById("resultado");
 
 			if (my_num > numero) {
 				resultado.innerHTML = "<em class=\"error\">El número a adivinar es mas <strong>pequeño</strong> que "+my_num+"</em>";
 				resultado.style.color = "red";
+				my_num_input.style.border = "1px solid red";
+				
 			}
 			else if (my_num < numero){
 				resultado.innerHTML = "<em class=\"error\">El número a adivinar es mas <strong>grande</strong>  que "+my_num+"</em>";
 				resultado.style.color = "red";
+				my_num_input.style.border = "1px solid red";
 
 			}
 			else {
@@ -75,7 +85,7 @@
 	<body>
 		<header>
 			<h1>Microjuego</h1>
-			<nav class="web-navigation">
+			<nav class="nav-container">
 				<ul>
 					<li><a href="index.html">Home</a></li>
 					<li><a href="cv.html">CV</a></li>
@@ -98,7 +108,7 @@
 		
 		<footer>
 		<p>Victor Belmonte &copy; 2025</p>
-		<nav class="web-navigation">
+		<nav class="nav-container">
 				<ul>
 					<li><a href="index.html">Home</a></li>
 					<li><a href="cv.html">CV</a></li>
