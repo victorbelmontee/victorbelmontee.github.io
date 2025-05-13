@@ -4,12 +4,52 @@
 		<title>Victor Belmonte - Contact</title>
 		<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 		<link rel="stylesheet" href="style.css" />
+		<script>
+			function validateForm() {
+				let isValid = true;
 
-		<style>
-            input:invalid {
-                border: 1px solid red;
-            }
-        </style>
+				const name = document.getElementById('name');
+				const email = document.getElementById('email');
+				const subject = document.getElementById('subject');
+				const message = document.getElementById('message');
+
+				// Clear previous error messages
+				document.getElementById('nameError').innerText = '';
+				document.getElementById('emailError').innerText = '';
+				document.getElementById('subjectError').innerText = '';
+				document.getElementById('messageError').innerText = '';
+
+				// Validate name
+				if (name.value.trim() === '') {
+					document.getElementById('nameError').innerText = 'Name is required.';
+					isValid = false;
+				}
+
+				// Validate email
+				if (email.value.trim() === '') {
+					document.getElementById('emailError').innerText = 'Email is required.';
+					isValid = false;
+				} else if (!/\S+@\S+\.\S+/.test(email.value)) {
+					document.getElementById('emailError').innerText = 'Invalid email format.';
+					isValid = false;
+				}
+
+				// Validate subject
+				if (subject.value.trim() === '') {
+					document.getElementById('subjectError').innerText = 'Subject is required.';
+					isValid = false;
+				}
+
+				// Validate message
+				if (message.value.trim() === '') {
+					document.getElementById('messageError').innerText = 'Message is required.';
+					isValid = false;
+				}
+
+				return isValid;
+			}
+		</script>
+		
 	</head>
 	<body>
 		<header>
@@ -25,22 +65,32 @@
 			</nav>
 		</header>
 	
-		<main>	
-		
-		<form>
-		<p><label for="name-field">Name:</label> <input type="text" name="Name" id="name-field" required /></p>
-		<p>Password: <input type="password" name="password" required /></p>
-		<p>Birth: <input type="date" name="birth" required /></p>
-		<p>Favourite Color: <input type="color" name="color" required /></p>
-		<p>Age: <input type="number" name="Age" value="18" min="1" max="120" required /></p>
-		<p><input type="checkbox" name="subscribe" id="subscribe"/><label for="subscribe"> Al no aceptar esta cajetilla de texto te suscribes de por vida a mi mailing y aceptas donarme 1000€ por la cara</p>
-		
-		<p><input type="submit"/></p>
+        <main>	
+            <section class="contact-section">
+                <h2>Get in Touch</h2>
+                <p>Feel free to contact me for job opportunities or any inquiries.</p>
+                
+                <form id="contactForm" onsubmit="return validateForm()">
+                    <p><label for="name">Full Name:</label> <input type="text" name="name" id="name" placeholder="Enter your full name" required /></p>
+                    <p class="error" id="nameError"></p>
+                    
+                    <p><label for="email">Email Address:</label> <input type="email" name="email" id="email" placeholder="example@domain.com" required /></p>
+                    <p class="error" id="emailError"></p>
+                    
+                    <p><label for="subject">Subject:</label> <input type="text" name="subject" id="subject" placeholder="What is this regarding?" required /></p>
+                    <p class="error" id="subjectError"></p>
+                    
+                    <p><label for="message">Message:</label> <textarea name="message" id="message" rows="5" placeholder="Your message..." required></textarea></p>
+                    <p class="error" id="messageError"></p>
+                                        
+                    <p>
+                        <input type="submit" value="Send Message" />
+                        <button type="reset">Clear Form</button>
+                    </p>
+                </form>
+            </section>
+        </main>
 
-
-		</form>
-		
-		</main>
 		<footer>
 		<p>Victor Belmonte &copy; 2025</p>
 		<nav class="nav-container">
